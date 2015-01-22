@@ -1,5 +1,4 @@
 #Author: Bonnie Tseng
-#Date: June 5, 2013
 #Purpose: to simulate a game of dominos
 
 from Tkinter import*
@@ -25,8 +24,6 @@ import time
 #   verticalOutline: displays the outline for a vertical outline on the canvas
 
 class Domino:
-#Author: Bonnie Tseng
-#Date: June 10, 2013
 #Purpose: initializes a value for the value of the domino and the size, radius and gap of the domino 
 #Input: self is the domino class, value is the value of the domino
 #Output: none
@@ -39,8 +36,6 @@ class Domino:
         self.intRadius = (self.intSize)/5
         self.intGap = (self.intRadius)/ 2
 
-#Author: Bonnie Tseng
-#Date: June 10, 2013
 #Purpose: sets a value for the domino
 #Input: self is the domino class, value is the value of the domino
 #Output: the value of the domino
@@ -51,16 +46,12 @@ class Domino:
             self.intValue = value
         return self.intValue
 
-#Author: Bonnie Tseng
-#Date: June 10, 2013
 #Purpose: returns the value of the domino
 #Input: self is the domino class
 #Output: the value of the domino
     def value(self):
         return self.intValue
 
-#Author: Bonnie Tseng
-#Date: June 10, 2013
 #Purpose: displays either a horizontal or vertical domino according to given parameters
 #Input: self is the domino class, canvas is the convas on which the domino is to be drawn on, x is the x-coordinate of the top left corner of the domino. y is the y-coordinate of the top left corner of the domino,
 #       orientation determines the orientation of the domino, faceup determines whether to display the dots or not
@@ -118,8 +109,6 @@ class Domino:
         elif secondDomino == 6:
             drawSixDots()
 
-#Author: Bonnie Tseng
-#Date: June 10, 2013
 #Purpose: draws a vertical outline on the canvas 
 #Input: self is the domino class, x is the x-coordinate of the left corner of the domino, y is the y-coordinate of the left corner of the domino
 #Output: none            
@@ -143,8 +132,6 @@ class Domino:
 #   displayHand: displays the hand of dominos on the canvas
 
 class Hand: 
-#Author: Bonnie Tseng
-#Date: April 30, 2013
 #Purpose: initializes the hands list, the size of the list and sorts the hands list
 #Input: self is the Dice Class, size is the size of the hand list (defaulted to 7)
 #Output: none         
@@ -153,16 +140,12 @@ class Hand:
         self.intSize = len(self.hand)
         self.sortHand()
 
-#Author: Bonnie Tseng
-#Date: June 12, 2013
 #Purpose: returns the size of the hand list
 #Input: self is the domino class
 #Output: the size of the hand list
     def sizeOfHand(self):
         return self.intSize
 
-#Author: Bonnie Tseng
-#Date: May 10, 2013
 #Purpose: inserts a given value into the list at a given position
 #Input: self is the hand Class, position is the position in which the value is being inserted, value is the value of the element being inserted
 #Output: none
@@ -170,8 +153,6 @@ class Hand:
         self.intSize = self.intSize + 1
         self.hand.append(domino)
 
-#Author: Bonnie Tseng
-#Date: May 31, 2013
 #Purpose: finds the location of a given parameter value using the "linear search" method
 #Input: self is the hand class, key is the value being searched for
 #Output: the location of the key
@@ -185,8 +166,6 @@ class Hand:
             location = count
         return location
 
-#Author: Bonnie Tseng
-#Date: May 10, 2013
 #Purpose: remove the element at a given parameter position in the list
 #Input: self is the hand Class, position is the position of the element to be removed
 #Output: none
@@ -195,8 +174,6 @@ class Hand:
         self.intSize = self.intSize - 1
         del self.hand[position - 1]
         
-#Author: Bonnie Tseng
-#Date: June 3, 2013
 #Purpose: creates an ascending/descending sorted list (depending on the parameter) using the "insertion sort" method
 #Input: self is the hand class, order is the order in which the list is to be sorted
 #Output: none
@@ -210,8 +187,6 @@ class Hand:
                 j = j - 1
             self.hand [j+1] = hold
             
-#Author: Bonnie Tseng
-#Date: April 30, 2013
 #Purpose: illustrates the hand on the canvas
 #Input: self is the hand Class, canvas, hand is the hand of dominos, x is x-coordiate of the top left corner of the first domino in the list
 #       y is the y-coordinate of the top left corner of the first dominio in the list, orientation is the orientation of the dominos of the list
@@ -252,8 +227,6 @@ class Hand:
 #   addToTable: adds dominos to the table list
 
 class Table:
-#Author: Bonnie Tseng
-#Date: June 16, 2013
 #Purpose: initializes the table list, size of the table and the left and right values of the table
 #Input: self is the table Class
 #Output: none
@@ -263,16 +236,12 @@ class Table:
         self.left = 5
         self.right = 6
 
-#Author: Bonnie Tseng
-#Date: June 16, 2013
 #Purpose: returns the size of the table list
 #Input: self is the table Class
 #Output: the size of the table list
     def size(self):
         return self.intSize
 
-#Author: Bonnie Tseng
-#Date: June 16, 2013
 #Purpose: determines the first value of the first domino in the table list
 #Input: self is the table Class
 #Output: none
@@ -280,8 +249,6 @@ class Table:
         first = self.table[0]
         self.left = first//10
 
-#Author: Bonnie Tseng
-#Date: June 16, 2013
 #Purpose: determines the last value of the last domino in the table list
 #Input: self is the table Class
 #Output: none
@@ -289,8 +256,6 @@ class Table:
         last = self.table[-1]
         self.right = last % 10
         
-#Author: Bonnie Tseng
-#Date: June 16, 2013
 #Purpose: draws the table list on the canvas
 #Input: self is the table Class, canvas is the canvas the table list is to be drawn on
 #Output: none
@@ -323,8 +288,6 @@ class Table:
                     domino.displayValue(canvas, x, y, orientation = "horizontal")
                     x = x - 60
 
-#Author: Bonnie Tseng
-#Date: June 16, 2013
 #Purpose: adds a domino to the table list
 #Input: self is the table Class, value is the value of the domino to be added to the table list, direction is the side of the list in which the value is to be added
 #Output: none
@@ -362,8 +325,6 @@ class Table:
 #   userSide: the side of the table on which the user's domino is to be played
 class DominoGame:
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: initializes the available list, four hands, table, play names and user move information
 #Input: self is the table Class
 #Output: none
@@ -381,8 +342,6 @@ class DominoGame:
         self.usersDomino = 8
         self.usersSide = "l"
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: deals the dominos to the four player hands
 #Input: self is the table Class
 #Output: none
@@ -442,8 +401,6 @@ class DominoGame:
         self.thirdHand.sortHand()
         self.fourthHand.sortHand()
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: displays the four hands
 #Input: self is the table Class, canvas is the canvas on which the four hands are to be drawn on
 #Output: none
@@ -453,8 +410,6 @@ class DominoGame:
         self.thirdHand. displayHand(canvas, self.thirdHand.hand, x = 210, y = 65, orientation = "horizontal")
         self.fourthHand.displayHand(canvas, self.fourthHand.hand, x = 565, y = 165, orientation = "vertical")
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: adds a domino to the table list
 #Input: self is the table Class, canvas is the canvas on which the players names are to be displayed on
 #Output: none        
@@ -469,8 +424,6 @@ class DominoGame:
         dspFourthName = Label (canvas, text = str(self.names[3]), font = ("Arial", "11", "bold"))
         dspFourthName.place (x = 560, y = 140)
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: gets the player names from the user
 #Input: self is the table Class
 #Output: none        
@@ -481,8 +434,6 @@ class DominoGame:
         self.names.append(strThirdName.get())
         self.names.append(strFourthName.get())
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: displays the initial set up of the game
 #Input: self is the table Class, canvas on which the set up is to be displayed on
 #Output: none
@@ -503,8 +454,6 @@ class DominoGame:
         self.playDominos(canvas)
         self.table.putTable(canvas)
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: initializes the first move in the game, player with the 6-6 domino makes a move
 #Input: self is the table Class, canvas is the canvas on which the game is to be displayed on
 #Output: none
@@ -535,8 +484,6 @@ class DominoGame:
         else:
             self.getUserMove()
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: gets the moves of the second, third and fourth hand
 #Input: self is the table Class, canvas is the canvas on which the game is to be displayed on, hand is the player who is making the next move
 #Output: none
@@ -587,16 +534,12 @@ class DominoGame:
             hand = hand + 1
         self.getUserMove()
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: displays a prompt informing the user that it is his/her turn
 #Input: self is the table Class
 #Output: none           
     def getUserMove(self):
         text = canvas.create_text(355,420, text = "It is your turn, please key in the domino you wish to place",font = ("Arial", "10", "bold"))
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: determines the dominos that can be used in a given player's move
 #Input: self is the table Class, hand represents the player who is currently making a move
 #Output: results a list of possible domino to be used     
@@ -607,8 +550,6 @@ class DominoGame:
                 storeList.append(i)
         return storeList
 
-#Author: Bonnie Tseng
-#Date: June 17, 2013
 #Purpose: gets the domino that the user want to play in his/her move
 #Input: self is the table Class, domino is the domino that the user wants to use
 #Output: none
